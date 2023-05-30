@@ -13,7 +13,8 @@ export const createPresentationDefinition = (id: string) => {
         client_id: process.env.VERIFIER_DOMAIN + "/present",
         client_id_scheme: "redirect_uri",
         response_uri: process.env.VERIFIER_DOMAIN + "/present",
-        response_type: "vp_token id_token",
+        // TODO: SIOPを使う場合、vp_tokenを含めるか要確認
+        response_type: "id_token vp_token",
         response_mode: "direct_post",
         // SIOP v2
         id_token_type: "subject_signed",
